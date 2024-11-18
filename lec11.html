@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = Math.random();
+        console.log("A RANDOM NUMBER : ", num);
+        num = num * 101;
+        console.log("MULTIPLYING BY 101 : ", num);
+        num = Math.floor(num);
+        console.log("FLOORING : ", num);
+
+        console.log("GENERATING A RANDOM NUMBER BETWEEN 35 AND 45");
+        num = Math.random();
+        num = Math.floor(num * ((45 - 35)) + 1);
+        console.log("RANDOM NUMEBR STEP 1 : ", num);
+        num = num + 35;
+        console.log("RANDOM NUMEBR STEP 2 : ", num);
+
+        function getRandomBetween(low = 0, high = 10) {
+            if (high < low) {
+                return NaN;
+            }
+            if (typeof (low) == "number" && typeof (high) == "number") {
+                return Math.floor(Math.random() * ((high - low) + 1)) + low;
+            }
+            else {
+                return NaN;
+            }
+        }
+        console.log(getRandomBetween(86, 90));
+    </script>
+</body>
+
+</html>

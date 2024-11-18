@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="mylist">
+        <li>Item 001</li>
+        <li>Item 002</li>
+        <li>Item 003</li>
+        <li>Item 004</li>
+        <li>Item 005</li>
+        <li>Item 006</li>
+    </ul>
+</body>
+<script>
+    var allItems = document.querySelectorAll("#mylist li");
+    // ALLITEMS IS NOT AN AARAY/ LIST, IT IS A COLLECTION -> WHICH SUPPORTS FOREACH
+    allItems.forEach(function (ele) {
+        ele.addEventListener("click", showAlert);
+    });
+    function showAlert() {
+        // EVERY EVENT HANDLING FUNCTION (HERE THE EVENT IS CLICK) HAS A "THIS"
+        // VARIABLE WHICH REFERS TO ELEMENT ITS SELF
+        console.log(this.innerText + "Was Clicked");
+    }
+</script>
+
+</html>

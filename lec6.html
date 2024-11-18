@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="myheading"></h1>
+    <h1 id="anotherheading">hello from h1</h1>
+    <ul id="mylist">
+        <li>ITEM 001</li>
+        <li>ITEM 002
+            <ol>
+                <li>item 001</li>
+                <li>item 002</li>
+            </ol>
+        </li>
+        <li>ITEM 003</li>
+    </ul>
+    <ul id="mylist2"></ul>
+    <ul id="mylist3"></ul>
+    <script>
+        document.querySelector("#myheading").innerText = "changed via JS";
+
+        var txt = document.querySelector("#anotherheading").innerText;
+        console.log("DATA IN H1 TAG IS : ", txt);
+
+        var lisTxt = document.querySelector("#mylist").innerText;
+        console.log("ALL THE TEXT IN LIST : ", lisTxt);
+
+        document.querySelector("#mylist2").innerText = "<li>APPLE</li><li>MANGO</li>";
+        document.querySelector("#mylist3").innerHTML = "<li>APPLE</li><li>MANGO</li>";
+        var listHTML = document.querySelector("#mylist3").innerHTML;
+        console.log(listHTML);
+        listHTML = document.querySelector("#mylist").innerHTML;
+        console.log(listHTML);
+    </script>
+</body>
+
+</html>

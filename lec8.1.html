@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-red {
+            background-color: salmon;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Item 001</h1>
+    <h1>Item 002</h1>
+    <h1>Item 003</h1>
+    <h1>Item 004</h1>
+    <h1>Item 005</h1>
+    <h1>Item 006</h1>
+</body>
+<script>
+    var allH1s = document.querySelectorAll("h1");
+    allH1s.forEach(function (val) {
+        val.classList.add("bg-red");
+    });
+
+    allH1s.forEach(function (val) {
+        val.addEventListener("click", showAlert);
+    });
+    function showAlert() {
+        alert("h1 was clicked");
+    }
+    allH1s.forEach(function (val) {
+        val.style.backgroundColor = "lightblue";
+        val.style.fontFamily = "Arial";
+
+        // style: background-color -> backgroundColor (- means minus)
+        // lower camel case names
+    });
+</script>
+
+</html>

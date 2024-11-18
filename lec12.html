@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="lec12.css">
+</head>
+
+<body>
+    <form action="#" method="post" id="mainform">
+        <h1>LOGIN FORM</h1>
+        <div class="form-group">
+            <h3>ENTER USERNAME : </h3>
+            <input type="text" name="un" id="un" data-req="true" data-min="5">
+            <p class="errmsg"></p>
+        </div>
+        <div class="form-group">
+            <h3>ENTER PASSWORD : </h3>
+            <input type="password" name="up" id="up" data-req="true" data-min="6" data-max="16">
+            <p class="errmsg"></p>
+        </div>
+        <hr>
+        <input type="submit" value="LOGIN">
+    </form>
+</body>
+<script src="lec12.js"></script>
+
+</html>

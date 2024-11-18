@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var per1 = {
+            "name": "vinit",
+            "age": 21,
+            "gender": "male"
+            // KEY VALUE PAIRS / HASHMAP
+        };
+        console.log(per1.name);
+        // HERE PER1 IS THE OBJECT AS WELL AS CLASS
+        var circle = function (rad = 0) {
+            rad = parseFloat(rad);
+            if (isNaN(rad)) {
+                this.radius = 0;
+            }
+            else {
+                this.radius = rad;
+            }
+            this.area = function () {
+                return this.radius * this.radius * 3.14;
+            }
+        };
+        var g = new circle();
+        g.radius = 4;
+        console.log(g.area());
+    </script>
+</body>
+
+</html>

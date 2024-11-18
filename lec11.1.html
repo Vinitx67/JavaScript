@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>DICE GAME</h1>
+    <img src="MEDIA/DICES/dice 1.png" alt="dice" id="dice-image" width="400">
+    <br><br>
+    <button id="btnRoll">ROLL NOW</button>
+</body>
+<script>
+    var img = document.querySelector("#dice-image");
+    document.querySelector("#btnRoll").addEventListener("click", () => {
+        var no = getRandomBetween(1, 6);
+        img.setAttribute("src", `MEDIA/DICES/dice ${no}.png`)
+    });
+    function getRandomBetween(low = 0, high = 10) {
+        if (high < low) {
+            return NaN;
+        }
+        if (typeof (low) == "number" && typeof (high) == "number") {
+            return Math.floor(Math.random() * ((high - low) + 1)) + low;
+        }
+        else {
+            return NaN;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="mylist">
+        <li>Item 001</li>
+        <li>Item 002</li>
+        <li>Item 003</li>
+        <li>Item 004</li>
+        <li>Item 005</li>
+        <li>Item 006</li>
+    </ul>
+</body>
+<script>
+    var allItems = document.querySelectorAll("#mylist li");
+    allItems.forEach(function (ele) {
+        ele.addEventListener("click", showAlert);
+    });
+    function showAlert() {
+        var newText = prompt("ENTER A NEW VALUE : OLD VALLUE WAS : ", this.innerText);
+        newText = newText.trim();
+        if (newText.length > 0) {
+            this.innerText = newText;
+        }
+    }
+</script>
+<!-- WHEN A LI IS CLICKED SHOW A PROMPT ASKING USER FOR A NEW VALUE
+    CHECK THE VALUE (EMPTY OR NULL)
+    AND IF IT IS NULL OR CONTAINS DATA PUT IT IN THE LIST -->
+
+</html>

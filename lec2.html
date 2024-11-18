@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var marks = parseInt(prompt("ENTER A MARKS"));
+        // LOGICAL OPERATORS
+        // LADDER IF
+        if (isNaN(marks)) {
+            console.error("VALUE IS NOT A NUMBER !!!");
+        }
+
+        else if (marks >= 70 && marks <= 100) {
+            console.log("A");
+        }
+
+        else if (marks >= 50 && marks <= 69) {
+            console.log("B");
+        }
+
+        else if (marks >= 35 && marks <= 49) {
+            console.log("C");
+        }
+
+        else if (marks >= 0 && marks <= 34) {
+            console.log("FAIL !!!");
+        }
+
+        else {
+            console.error("INVALID MARKS !!!");
+        }
+
+    </script>
+</body>
+
+</html>

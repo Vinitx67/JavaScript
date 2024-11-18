@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = prompt("ENTER SOME TEXT", "A quick brown fox jumps over the lazy dog");
+        str = str.trim();
+        console.log("LENGTH OF THE TXT IS : ", str.length);
+        console.log("TEXT IN CAPITAL LETTER : ", str.toUpperCase());
+        //  str = str.toUpperCase() --> original text will be changed
+        console.log("TEXT IN LOWER LETTER : ", str.toLowerCase());
+        if (str.indexOf("dog") == -1) {
+            console.log("TEXT DOG NOT FOUND")
+        }
+        console.log("CHARACTER AT POSITION 5 IS : ", str.charAt(5));
+        // concat -> joins text --> "+"
+        // charCodeAt --> gives the ASCII code of the letter at a position
+        console.log("replacing 'o' with 'z' we get : ", str.replace("o", "z"));
+        console.log("extracting 10 letters from 5th position : ", str.substr(5, 10));
+    </script>
+    <!--
+        ASK THE USER TO ENTER EMAIL
+        CHECK IF THE EMAIL IS VALID
+        EMALIL MUST HAVE @ AND
+        EMAIL MUST HAVE 6 LETTERS
+
+      -->
+</body>
+
+</html>

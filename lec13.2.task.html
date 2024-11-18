@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .accordian-main {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin-top: 20px;
+        }
+
+        .accordian-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .accordian-content {
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 1px solid black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition-duration: 0.4s;
+            height: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+
+        .accordian-content.active {
+            padding: 10px 20px;
+            font-size: 16px;
+            height: auto;
+            transition-duration: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordian-main">
+        <div class="accordian-title">
+            PARAGRAPH ONE
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="accordian-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </div>
+    </div>
+
+    <div class="accordian-main">
+        <div class="accordian-title">
+            PARAGRAPH TWO
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="accordian-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </div>
+    </div>
+
+    <div class="accordian-main">
+        <div class="accordian-title">
+            PARAGRAPH THREE
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="accordian-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </div>
+    </div>
+</body>
+
+<script>
+    document.querySelectorAll(".accordian-title").forEach(function (title) {
+        title.addEventListener("click", function () {
+            let content = title.nextElementSibling;
+            let btn = title.querySelector(".toggle-btn");
+            content.classList.toggle("active");
+            btn.textContent = btn.textContent === "+" ? "-" : "+";
+        });
+    });
+</script>
+
+</html>

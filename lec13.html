@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 10px;
+            list-style-position: inside;
+            align-items: flex-start;
+        }
+
+        .highlight {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span>FRUITS</span>
+            <ul>
+                <li>APPLE</li>
+                <li>ORANGE</li>
+                <li>PEAR</li>
+            </ul>
+        </li>
+        <!-- PARENT, CHILD, SIBLING -->
+        <li>
+            <span>VEGETABLES</span>
+            <ul>
+                <li>CARROT</li>
+                <li class="highlight">BROCCOLI</li>
+                <li>SPINACH</li>
+            </ul>
+        </li>
+
+        <li>
+            <span>STATIONERY</span>
+            <ul>
+                <li>PEN</li>
+                <li>NOTEBOOK</li>
+                <li>PAPER</li>
+            </ul>
+        </li>
+
+    </ul>
+    <!-- DOM TRAVERSING -->
+    <button id="parent">PARENT</button>
+    <button id="firstChild">FIRST CHILD</button>
+    <button id="lastChild">LAST CHILD</button>
+    <button id="nextSib">NEXT SIBLING</button>
+    <button id="prevSib">PREVIOUS SIBLING</button>
+    <button id="children">SELECT ALL SIBLING</button>
+</body>
+<script>
+    var currentElement = document.querySelector(".highlight");
+    function changeHighlight(oldEle, newEle) {
+        console.log(newEle);
+        if (oldEle == undefined || newEle == undefined) {
+            return;
+        }
+        if (oldEle == null || newEle == null) {
+            return;
+        }
+        if (oldEle instanceof HTMLCollection) {
+            for (var i = 0; o < oldEle.length; i++) {
+                oldEle[i].classList.remove("highlight");
+            }
+        };
+        if (newEle instanceof HTMLCollection) {
+            for (var i = 0; o < newEle.length; i++) {
+                newEle[i].classList.add("highlight");
+            }
+            currentElement = newEle;
+        };
+
+        if (oldEle instanceof HTMLElement) {
+            oldEle.classList.remove("highlight");
+        }
+        if (newEle instanceof HTMLElement) {
+            newEle.classList.add("highlight");
+            currentElement = newEle;
+        }
+    }
+    document.querySelector("#parent").addEventListener("click", function () {
+        changeHighlight(currentElement, currentElement.parentElement);
+    });
+    document.querySelector("#firstChild").addEventListener("click", function () {
+        changeHighlight(currentElement, currentElement.firstElementChild);
+    });
+    document.querySelector("#lastChild").addEventListener("click", function () {
+        changeHighlight(currentElement, currentElement.lastElementChild);
+    });
+    document.querySelector("#nextSib").addEventListener("click", function () {
+        changeHighlight(currentElement, currentElement.nextElementSibling);
+    });
+    document.querySelector("#prevSib").addEventListener("click", function () {
+        changeHighlight(currentElement, currentElement.previousElementSibling);
+    });
+    document.querySelector("#children").addEventListener("click", function () {
+        changeHighlight(currentElement, currentElement.children);
+    });
+</script>
+
+</html>

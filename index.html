@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // EVERY STATEMNET ENDS WITH THE SEMI COLON;
+        // TRY WRITTING IN SMALL CASES
+        alert("HELLO FROM JS");
+        console.log("HI FROM JS");
+        // DONT USE THIS UNLESS IS IT FOR TESTING AS IT DISTURBS PAGE FLOW
+        document.write("HI FROM JS");
+
+        // VARIABLES, LET AND CONST
+        var a = 10;
+        var b = 5;
+        var c;
+        c = a + b;
+        console.log(c);
+        // NAMING RULES FOR VARIABLES IN JS
+        // 1: SHOULD START WITH A LETTER EX: num, amt
+        // 2: SHOULD NOT START WITH A NUMBER OR SPECIAL CHARACTER (EXCEPT UNDERSCORE) EX: 1num, &t (WRONG)
+        // 3: SHOULD NOT CONTAIN ANY SPECIAL CHARACTER (EXCEPT UNDERSCORE) EX: a&b (WRONG), _ab (OK)
+        // 4: SHOULD NOT BE A RESERVED KEYWORD (INT, FLOAT, TRUE, FALSE ARE WRONG AS THESE ARE WORDS RESERVED FOR JS LANG ITSELF)
+        // 5: SHOULD BE MEANINGFUL : CONSIDER USING RADIUS INSTED OF R
+        // 6: SHOULD BE DESCRIPTIVE : CONSIDER USING depositAmt INSTED OF amt   
+        // THE ABOVE RULES APPLY TO ALL PROGRAMMING LANGUAGES
+
+        var a; //UNDEFINED
+
+        a = 10; //int (integer number without decimal)
+        console.log("THE DATATYPE OA A IS " + typeof (a));
+
+        a = 14.5; //float (number with a decimal point)
+        console.log("THE DATATYPE OA A IS " + typeof (a));
+
+        a = "hello"; //string text
+        console.log("THE DATATYPE OA A IS " + typeof (a));
+
+        a = true; //boolean true or false
+        console.log("THE DATATYPE OA A IS " + typeof (a));
+
+        a = ["apple", "mango"]; //array
+        console.log("THE DATATYPE OA A IS " + typeof (a)); //object
+
+        a = {
+            name: "JOHN",
+            age: 45
+        }
+        console.log("THE DATATYPE OA A IS " + typeof (a)); //object
+
+        a = null;
+        console.log("THE DATATYPE OA A IS " + typeof (a)); //object
+
+        a = undefined;
+        console.log("THE DATATYPE OA A IS " + typeof (a)); //object
+
+
+
+        var str = "90"; // THIS IS TWO LETTER 9 AND 0
+        // THIS IS NOT A NUMBER, THIS IS A TEXT
+        var a = 90;
+        // here i can perform mathematicaal operations on a
+        // i can only perform text operations on str. not maths
+        console.log("TEXT", str + 1);
+        console.log("NUMBER", a + 1);
+        // TEXT + NUMBER = TEXT
+        console.log("TEXT", str - 1);
+        console.log("NUMBER", a - 1);
+        // TEXT - NUMBER STORED AS TEXT = NUMBER
+
+
+        var n = prompt("ENTER YOUR NAME : ");
+        alert("YOU TYPED " + n);
+        alert("THE DATATYPE OF n IS " + typeof (n));
+
+        /* var a = prompt("ENTER A NUMBER : ");
+        var b = prompt("ENTER ANOTHER NUMBER : ");
+        c = a + b;
+        console.log(c); */
+
+        var a = prompt("ENTER A NUMBER : ");
+        var b = prompt("ENTER ANOTHER NUMBER : ");
+        var inta = parseInt(a);
+        var intb = parseInt(b);
+        c = inta + intb;
+        console.log(c);
+        console.log("ADDITION OF ", a, "AND", b, "IS", c);
+        console.log("ADDITION OF " + a + " AND " + b + " IS " + c);
+        // `` -> to the left of the 1 key
+        console.log(`ADDITION OF ${a} and ${b} is ${c}`);
+
+
+
+        var a = parseInt(prompt("ENTER A NUMBER : "));
+        var b = parseInt(prompt("ENTER ANOTHER NUMBER : "));
+        c = a + b;
+        // EXPECTING A NUMBER WITH DECIMAL USER parseFloat
+        if (isNaN(a)) {
+            alert("INVALID NUMBER !!!");
+        }
+        else {
+            if (isNaN(a)) {
+                alert("INVALID NUMBER !!!");
+            }
+            else {
+                console.log(`ADDITION OF ${a} and ${b} is ${c}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

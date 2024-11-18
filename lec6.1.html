@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myinput">
+    <hr>
+    <!-- CLICK EVENT -->
+    <button onclick="alert(document.querySelector('#myinput').value);">SHOW IN ALERT</button>
+    <script>
+        document.querySelector("#myinput").value = "TYPED BY JS";
+        // YOU CAN TAKE VALUE BY THE VALUE PROPERTY
+    </script>
+</body>
+
+</html>

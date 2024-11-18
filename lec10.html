@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>ENTER A RADIUS : </h3>
+    <input type="text" id="res">
+    <button id="btnArea">CALCULATE AREA</button>
+    <h1 id="inpRad"></h1>
+
+    <script>
+        class circle {
+            // is a special character that automatically runs when the oject is created
+            constructor(rad = 0) {
+                // this.radius = isNaN(parseFloat(rad)) ? 0 : parseFloat(rad);
+                rad = parseFloat(rad);
+                if (isNaN(rad)) {
+                    this.radius = 0;
+                }
+                else {
+                    this.radius = rad;
+                }
+            }
+            area() {
+                return this.radius * this.radius * 3.14;
+            }
+        }
+        var g = new circle();
+        var h = new circle(5);
+        g.radius = 4;
+        console.log(g.area());
+        // class = circle, object - g, h
+        document.querySelector("#btnArea").addEventListener("click", function () {
+            g.radius = document.querySelector("#res").value;
+            document.querySelector("#inpRad").innerText = g.area();
+        });
+
+    </script>
+</body>
+
+</html>

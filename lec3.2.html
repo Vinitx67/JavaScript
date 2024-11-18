@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (var a = 1; a <= 10; a++) {
+            console.log(a);
+            if (a == 5) {
+                break; // TO UNEXPECTEDLY MOVE THE CONTROL OUT OF LOOP
+            }
+        }
+        console.log("CONTINUE");
+        for (var a = 1; a <= 10; a++) {
+            if (a == 5) {
+                continue; // TO SKIP AN ITERATION OF LOOP
+            }
+            console.log(a);
+        }
+    </script>
+</body>
+
+</html>

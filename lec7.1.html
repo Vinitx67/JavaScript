@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        border: 2px solid black;
+        border-radius: 7px;
+        margin-top: 20px;
+        padding: 16px 0;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: 0.5s;
+    }
+
+    .m-light {
+        background-color: lightgray;
+        color: black;
+    }
+
+    .m-dark {
+        background-color: black;
+        color: lightgray;
+    }
+</style>
+
+<body>
+    <h1 id="demotxt" class="m-dark">Mode Demo</h1>
+    <button onclick="changeMode('light')">Light mode</button>
+    <button onclick="changeMode('dark')">Dark mode</button>
+</body>
+
+<!-- 1. CLASS NAME -->
+<!-- <script>
+    var demoText = document.querySelector("#demotxt");
+    function changeMode(mode) {
+        if (mode == "light") {
+            demoText.className = "m-light";
+        }
+        else if (mode == "dark") {
+            demoText.className = "m-dark";
+        }
+        else {
+            alert("INVALID MODE");
+        }
+    }
+</script> -->
+
+<!-- 2. SET ATTRIBUTE -->
+<!-- <script>
+    var demoText = document.querySelector("#demotxt");
+    function changeMode(mode) {
+        if (mode == "light") {
+            demoText.setAttribute("class", "m-light");
+        }
+        else if (mode == "dark") {
+            demoText.setAttribute("class", "m-dark");
+        }
+        else {
+            alert("INVALID MODE");
+        }
+    }
+</script> -->
+
+
+<!-- 3. CLASS LIST (THIS IS THE PROPER WAY IT HANDLES MULTIPLE CLASSES) -->
+<script>
+    var demoText = document.querySelector("#demotxt");
+    function changeMode(mode) {
+        if (mode == "light") {
+            if (!demoText.classList.contains("m-light")) {
+                demoText.classList.add("m-light");
+                demoText.classList.remove("m-dark");
+            }
+        }
+        else if (mode == "dark") {
+            if (!demoText.classList.contains("m-dark")) {
+                demoText.classList.add("m-dark");
+                demoText.classList.remove("m-light");
+            }
+        }
+        else {
+            alert("INVALID MODE");
+        }
+    }
+</script>
+
+</html>

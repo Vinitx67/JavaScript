@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function largest(a, b) {
+            if (a > b) {
+                console.log(a);
+            }
+            else if (a == b) {
+                console.log(a, b);
+            }
+            else if (b > a) {
+                console.log(b);
+            }
+        }
+        largest(10, 20);
+
+        function multTable(n) {
+            var i, a;
+            var tb1Txt = "";
+            for (i = 1; i <= 10; i++) {
+                a = i * n;
+                tb1Txt = tb1Txt + `${n} x ${i} = ${a}\n`;
+            }
+            return tb1Txt;
+        }
+
+        function largest(a, b) {
+            if (a > b) {
+                return a;
+            }
+            else {
+                return b;
+            }
+        }
+
+        var num;
+        num = parseInt(prompt("ENTER A NUMBER : "));
+        var tb1 = multTable(num);
+        alert(tb1);
+        console.log(tb1);
+    </script>
+</body>
+
+</html>

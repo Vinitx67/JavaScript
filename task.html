@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .img1 {
+        width: 500px;
+
+    }
+
+    .img2 {
+        width: 500px;
+    }
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .blb-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    button {
+        width: 100px;
+        height: 50px;
+        cursor: pointer;
+
+    }
+
+    .b1 {
+        margin-right: 50px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="img-container">
+            <img class="img1" id="bulbimg" src="MEDIA/bulb-on.svg.webp">
+        </div>
+        <div class="blb-button">
+            <button class="b1" onclick="on()">ON</button>
+            <button onclick="off()">OFF</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    var bulb = document.getElementById("bulbimg");
+
+    function on() {
+
+        bulb.src = "MEDIA/bulb-on.svg.webp";
+    }
+    function off() {
+
+        bulb.src = "MEDIA/bulb-off.svg.webp";
+    }
+</script>
+
+
+</html>

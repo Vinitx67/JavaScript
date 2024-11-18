@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reply = prompt("ENTER Y FOR YES AND N FOR NO");
+        // LOGICAL OPERATORS
+        // Y or y both are different letters
+        reply = reply.trim(); //trim removes extra white spaces from the txt
+        if (reply.length != 1) {
+            // if (!reply.length != 1) { NOT LOGICAL OPERATOR
+            console.error("INVALID INPUT !!!");
+        }
+        else if (reply == "Y" || reply == "y") {
+            console.log("YESSSS");
+        }
+        else if (reply == "N" || reply == "n") {
+            console.log("NOOOO");
+        }
+        else {
+            console.error("ONLY Y OR N IS ALLOWED !!!");
+        }
+
+    </script>
+</body>
+
+</html>

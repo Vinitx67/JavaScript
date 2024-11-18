@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #dice-image {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body style="text-align: center;">
+    <h1>DICE GAME</h1>
+    <img src="MEDIA/DICES/dice 1.png" alt="dice" id="dice-image">
+    <br><br>
+    <button onclick="rollDice()">ROLL NOW</button>
+</body>
+
+<script>
+    function rollDice() {
+        num = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("dice-image").src = `MEDIA/DICES/dice ${num}.png`;
+
+    }
+</script>
+<!-- 
+CREATE A DICE GAME
+WHEN USER CLICKS "ROLL" BUTTON
+AN IMAGE OF DICE FACE FROM 1 TO 6 IS DISPLAYED
+IMAGES ARE PROVIDED IN THE FOLDER FROM THE INTERNET
+HINT USING A NAMING SCHEME FOR A IMAGE
+-->
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [5, 8, 9, 6, 8, 4];
+        var doubleArr = []
+        // DOUBLE THESE - AND PRINT
+        //  1. FOR LOOP
+        for (var i = 0; i < nums.length; i++) {
+            doubleArr.push(nums[i] * 2);
+        }
+        console.log(doubleArr);
+        doubleArr = [];
+
+        // 2. FOR EACH
+        function doubleValue(val) {
+            doubleArr.push(val * 2);
+        }
+        nums.forEach(doubleValue);
+        console.log(doubleArr);
+        doubleArr = [];
+
+        //  3. ANONYMUS FUNCTION
+        nums.forEach(function (val) {
+            doubleArr.push(val * 2);
+        });
+        console.log(doubleArr);
+
+        // 4. CHANGE THE ORIGINAL ARRAY
+        // idx - index, arr - original array
+        nums.forEach(function (val, idx, arr) {
+            arr[idx] = val * 2;
+        });
+        console.log(nums);
+
+
+    </script>
+</body>
+
+</html>

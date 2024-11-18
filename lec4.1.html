@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fruits = ["APPLE", "MANGO", "GUAVA"];
+        console.log("INITIAL : ", fruits);
+
+        // ADD AN ITEM TO THIS ARRAY
+        fruits.push("GRAPESS");
+        fruits.push("PEAR", "BANANA");
+        console.log("AFTER PUSH : ", fruits);
+
+        // CHANGING APPLE TO PINEAPPLE
+        var idx = fruits.indexOf("APPLE");
+
+        // THIS GIVES -1 IF IT DOES NOT FIND ANYTHING
+        if (idx != -1) {
+            fruits[idx] = "PINEAPPLE";
+            console.log("CHANGING : ", fruits);
+        }
+
+        // CHECKING IF LIST CONTAINS MANGO
+        if (fruits.includes("MANGO") == true) { //if(fruits.includes("mango"))
+            console.log("MANGO IS PRESENT");
+        }
+        else {
+            console.log("MANGO IS PRESENT");
+        }
+
+        // INSERTING A FRUIT AFTER MANGO
+        fruits.splice(2, 0, "APRICOT");
+        console.log("INSERTING AT INDEX 2 : ", fruits);
+
+        // DELTING MANGO AT 1ST INDEX LOCATION
+        fruits.splice(1, 1); //DELETE AT 1ST INDEX 1ST ELEMENT
+        console.log("DELETING MANGO : ", fruits);
+
+        // AT 2ND INDEX DELETE 3 FRUITS AND INSERT 2 FRUITS
+        fruits.splice(2, 3, "KIWI", "WATERMELON");
+        console.log("DELETING 3 FRUITS AND INSERTING 2 FRUITS : ", fruits);
+
+        // NO OF ITEMS
+        console.log("NUMBER OF ITEMS : ", fruits.length);
+
+        // SORT THE LIST
+        fruits.sort();
+        console.log("SORTED : ", fruits);
+
+        // REVERSE THE LIST
+        fruits.reverse();
+        console.log("REVERSED : ", fruits);
+
+        // REMOVE THE LAST ELEMENT
+        fruits.pop();
+        console.log("LAST ELEMENT REMOVED : ", fruits);
+
+        // CLEAR THE LIST
+        fruits.splice(0, fruits.length);
+        console.log("FRUITS", fruits);
+    </script>
+</body>
+
+</html>
