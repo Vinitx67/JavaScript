@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        transition: 0.4s;
+    }
+
+    li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: darkblue;
+    }
+</style>
+
+<body>
+    <button id="btnAdd">ADD</button>
+    <ul id="mylist"></ul>
+</body>
+<script>
+    window.onload = function () {
+        var myList = document.querySelector("#mylist");
+
+        document.querySelector("#btnAdd").addEventListener("click", function () {
+            var txt = prompt("ENTER ITEM TO ADD : ");
+            txt = txt.trim();
+            if (txt.length <= 0) {
+                console.error("EMPTY TEXT");
+                return;
+            }
+            var item = document.createElement("li");
+            item.innerText = txt;
+            item.addEventListener("click", editElement);
+            myList.appendChild(item);
+        });
+        function editElement(ev) {
+            // you can also use this
+            var ele = ev.target;
+            // target : on which element did the event occur
+            var txt = prompt("ENTER NEW VALUE FOR : " + ele.innerText, ele.innerText);
+            txt = txt.trim();
+            if (txt.length <= 0) {
+                console.error("EMPTY TEXT");
+                return;
+            }
+            ele.innerText = txt;
+        }
+    }
+</script>
+
+</html>

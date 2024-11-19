@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        transition: 0.4s;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: darkblue;
+    }
+
+    button {
+        background: none;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: lightgrey;
+        cursor: pointer;
+    }
+
+    #context-menu {
+        border: 1px solid grey;
+        box-shadow: 0 0 5px gray;
+        border-radius: 10px;
+        position: absolute;
+        padding: 8px 0;
+        display: none;
+        background-color: white;
+        z-index: 10;
+    }
+
+    #context-menu .context-item {
+        padding: 8px 16px;
+        transition: 0.4s;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    #context-menu .context-item:hover {
+        background-color: lightgrey;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <button id="btnAdd">ADD ITEM</button>
+    <ul id="mylist"></ul>
+    <div id="context-menu">
+        <div class="context-item" id="menuEdit">EDIT</div>
+        <div class="context-item" id="menuDelete">DELETE</div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var myList = document.querySelector("#mylist");
+        var menu = document.querySelector("#context-menu");
+        document.querySelector("#btnAdd").addEventListener("click", function () {
+            var txt = prompt("ENTER ITEM TO ADD : ");
+            txt = txt.trim();
+            if (txt.length <= 0) {
+                console.error("EMPTY TEXT");
+                return;
+            }
+            var item = document.createElement("li");
+            item.innerText = txt;
+            item.addEventListener("click", editElement);
+            item.addEventListener("contextmenu", showContextMenu);
+            myList.appendChild(item);
+        });
+        function editElement(ev) {
+            // you can also use this
+            var ele = ev.target;
+            // target : on which element did the event occur
+            var txt = prompt("ENTER NEW VALUE FOR : " + ele.innerText, ele.innerText);
+            txt = txt.trim();
+            if (txt.length <= 0) {
+                console.error("EMPTY TEXT");
+                return;
+            }
+            ele.innerText = txt;
+        }
+        var clcikedEle = null;
+        function showContextMenu(ev) {
+            clcikedEle = ev.target;
+            ev.preventDefault();
+            menu.style.left = ev.pageX + "px";
+            menu.style.top = ev.pageY + "px";
+            menu.style.display = "block";
+            console.log(ev);
+        }
+    }
+</script>
+
+</html>
