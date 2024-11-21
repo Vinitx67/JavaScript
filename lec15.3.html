@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        h1 {
+            font-size: 200px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        button {
+            background: none;
+            border: 2px solid black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: lightgray;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+    <h1 id="mycounter">0</h1>
+    <hr>
+    <div class="container">
+        <button onclick="startAnimation()">START</button>
+        <button onclick="stopAnimation()">STOP</button>
+        <button onclick="resetValue()">RESET</button>
+    </div>
+</body>
+<script>
+    var counter = document.querySelector("#mycounter");
+    var i = 1;
+    var counterAnim;
+    function increment() {
+        counter.innerText = i;
+        i++;
+    }
+    function startAnimation() {
+        // if value does not eexist -> false
+        if (!counterAnim) { //if(counterAnim == undefined)
+            counterAnim = setInterval(increment, 1000);
+        }
+    }
+    function resetValue() {
+        if (!counterAnim) {
+            i = 1;
+            counter.innerText = 0;
+        }
+        else {
+            alert("STOP ANIMATION FIRST")
+        }
+    }
+    function stopAnimation() {
+        if (counterAnim) {
+            clearInterval(counterAnim);
+            counterAnim = undefined;
+        }
+    }
+</script>
+
+</html>

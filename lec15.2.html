@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        h1 {
+            font-size: 250px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+    <h1 id="mycounter"></h1>
+</body>
+<script>
+    var counter = document.querySelector("#mycounter");
+    var i = 1;
+    function increment() {
+        counter.innerText = i;
+        i++;
+    }
+    setInterval(increment, 100);
+</script>
+
+</html>

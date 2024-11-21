@@ -68,6 +68,8 @@
 </body>
 <script>
     window.onload = function () {
+        document.querySelector("#menuEdit").addEventListener("click", editElement);
+        document.querySelector("#menuDelete").addEventListener("click", deleteElement);
         var myList = document.querySelector("#mylist");
         var menu = document.querySelector("#context-menu");
         document.querySelector("#btnAdd").addEventListener("click", function () {
@@ -83,9 +85,9 @@
             item.addEventListener("contextmenu", showContextMenu);
             myList.appendChild(item);
         });
-        function editElement(ev) {
+        function editElement() {
             // you can also use this
-            var ele = ev.target;
+            var ele = clickedEle;
             // target : on which element did the event occur
             var txt = prompt("ENTER NEW VALUE FOR : " + ele.innerText, ele.innerText);
             txt = txt.trim();
@@ -94,15 +96,25 @@
                 return;
             }
             ele.innerText = txt;
+            menu.style.display = "none";
+            clickedEle = undefined;
         }
-        var clcikedEle = null;
+        var clickedEle = null;
         function showContextMenu(ev) {
-            clcikedEle = ev.target;
+            clickedEle = ev.target;
             ev.preventDefault();
             menu.style.left = ev.pageX + "px";
             menu.style.top = ev.pageY + "px";
             menu.style.display = "block";
-            console.log(ev);
+        }
+        function deleteElement() {
+            var ele = clickedEle;
+            var res = confirm("ARE YOUU SURE YOU WANT TO DELETE !?");
+            if (res) {
+                ele.remove();
+            }
+            menu.style.display = "none";
+            clickedEle = undefined;
         }
     }
 </script>
