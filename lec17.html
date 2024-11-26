@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>ENTER A USER ID :</h3>
+    <input type="number" min="1" max="10" value="1" id="txtUserId">
+    <hr>
+    <button id="btnGetData">GET DATA</button>
+</body>
+<script>
+    window.onload = function () {
+        var btn = document.querySelector("#btnGetData");
+        var inp = document.querySelector("#txtUserId");
+        var url = "https://jsonplaceholder.typicode.com/users/";
+        btn.addEventListener("click", function () {
+            var val = parseInt(inp.value.trim());
+            // request
+            if (!val) { return; }
+            if (val <= 0 || val >= 11) {
+                console.error("INVALID ID");
+                return;
+            }
+            fetch(url + val)
+                .then(function (resp) {
+                    return resp.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                })
+        });
+    }
+</script>
+
+</html>
