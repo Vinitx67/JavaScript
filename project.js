@@ -1,4 +1,4 @@
-var apiKey = "59952541d301940ff00bed71cefb7229";
+var apiKey = "";
 window.onload = function () {
     var inpCity = document.querySelector("#inpCity");
     var tblCityData = document.querySelector("#cityData");
